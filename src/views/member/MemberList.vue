@@ -73,8 +73,10 @@ const select = async () => {
                   </RouterLink>
                 </li>
               </ol>
-              <p>新規登録は<RouterLink v-bind:to="{ name: 'MemberAdd' }">こちら</RouterLink>から</p>
             </section>
+          </section>
+          <section class="sentence">
+            <p>新規登録は<RouterLink v-bind:to="{ name: 'MemberAdd' }">こちら</RouterLink>から</p>
           </section>
         </v-container>
       </section>

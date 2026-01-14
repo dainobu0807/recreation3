@@ -2,7 +2,7 @@
 import { ref, reactive, watch } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import PrefectureList from '@/components/icons/prefectureList.vue'
-import type { Member } from '@/types/member'
+import type { SakeItem } from '@/interfaces.ts'
 import axios from 'axios'
 
 //くるくる＆ポップアップ
@@ -10,7 +10,7 @@ const loading = ref(false)
 const showPopup = ref(false)
 
 const router = useRouter()
-const member: Member = reactive({
+const member: SakeItem = reactive({
   prefecture: '',
   name: '',
   city: '',
@@ -212,7 +212,7 @@ const onAdd = async () => {
                 v-if="showPopup"
                 type="success"
                 class="mt-6 text-center"
-                border="left"
+                border="start"
                 colored-border
                 elevation="2"
               >
