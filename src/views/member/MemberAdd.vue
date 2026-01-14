@@ -2,6 +2,7 @@
 import { ref, reactive, watch } from 'vue'
 import { RouterLink, useRouter } from 'vue-router'
 import PrefectureList from '@/components/icons/prefectureList.vue'
+import type { Member } from '@/types/member'
 import axios from 'axios'
 
 //くるくる＆ポップアップ
