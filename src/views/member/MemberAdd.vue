@@ -18,7 +18,7 @@ const member: SakeItem = reactive({
   url: '',
   introduction: '',
   alcohol: '',
-  taste_scale: 0, //v-ratingが数値を返すがdbは文字列なのであとで変換する
+  taste_scale: '0', //v-ratingが数値を返すがdbは文字列なのであとで変換する
   taste_label: '',
   price: '',
 })
@@ -30,15 +30,16 @@ const max = ref(22)
 watch(
   () => member.taste_scale,
   (newVal) => {
-    if (!newVal) {
+    const v = String(newVal) // 文字列に寄せる
+    if (!v) {
       member.taste_label = ''
       return
     }
-    if (newVal === 1) member.taste_label = '甘口'
-    else if (newVal === 2) member.taste_label = 'やや甘口'
-    else if (newVal === 3) member.taste_label = 'やや辛口'
-    else if (newVal === 4) member.taste_label = '辛口'
-    else if (newVal === 5) member.taste_label = '超辛口'
+    if (v === '1') member.taste_label = '甘口'
+    else if (v === '2') member.taste_label = 'やや甘口'
+    else if (v === '3') member.taste_label = 'やや辛口'
+    else if (v === '4') member.taste_label = '辛口'
+    else if (v === '5') member.taste_label = '超辛口'
   },
 )
 
@@ -178,7 +179,7 @@ const onAdd = async () => {
                   </v-col>
 
                   <dt>
-                    <label for="tasteScale">●辛口度：{{ member.taste_label }}&nbsp;</label>
+                    <label for="taste_scale">●辛口度：{{ member.taste_label }}&nbsp;</label>
                   </dt>
                   <v-col cols="5" class="text-left">
                     <dd>

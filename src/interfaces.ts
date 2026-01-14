@@ -1,5 +1,5 @@
 export interface SakeItem {
-  id: string;
+  id?: string;
   name: string;
   brewery: string;
   prefecture: string;
@@ -8,6 +8,6 @@ export interface SakeItem {
   alcohol?: string;
   introduction?: string;
   url?: string;
-  tasteScale?: string;
-  tasteLabel?: string;
+  taste_scale?: string;
+  taste_label?: string;
 }

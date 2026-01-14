@@ -49,7 +49,7 @@ const item = computed(() => {
             <dd>{{ item.alcohol }}</dd>
 
             <dt>●辛口度(1~5)</dt>
-            <dd>{{ item.tasteScale }}（{{ item.tasteLabel }}）</dd>
+            <dd>{{ item.taste_scale }}（{{ item.taste_label }}）</dd>
 
             <dt>●価格（円/720ml）</dt>
             <dd>{{ item.price }}</dd>
